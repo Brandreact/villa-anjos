@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villa Anjos — Privater Luxus-Rückzugsort mit Infinity-Pool · Ponta do Sol, Madeira</title>
+  <meta name="description" content="Villa Anjos in Ponta do Sol, Madeira: exklusiver Rückzugsort für 5 Gäste mit privatem Salzwasser-Infinity-Pool, unverbautem Meerblick, 3 Master-Suiten und High-End-Design. Jetzt Aufenthalt anfragen." />
+  <meta name="theme-color" content="#F6F2EB" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Villa Anjos — Privater Luxus über dem Atlantik" />
+  <meta property="og:description" content="Exklusive Villa mit Infinity-Pool und Meerblick in Ponta do Sol, Madeira." />
+  <meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/131d8a5e-e1ab-4d98-96ac-1fd71733ed1b.jpeg?im_w=1200" />
+
+  <!-- Perf: connect early to font + image CDNs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://a0.muscache.com" crossorigin />
+
+  <!-- Typography: Cormorant Garamond (display) + Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN — for production, compile Tailwind into a static stylesheet instead) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:   '#F6F2EB', // page background — warm off-white
+            cream:   '#FCFAF5', // raised surfaces / cards
+            sand:    '#EAE1D3', // soft beige fills
+            stone:   '#CDC4B4', // hairline borders
+            taupe:   '#6F675C', // muted / secondary text
+            ink:     '#1C1A17', // headings — near-anthracite
+            graphite:'#36322C', // body text
+            gold:    '#B5965F', // matte gold accent (lines, dark bg)
+            golddark:'#8A6B3D', // gold for small text on light (AA contrast)
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'ui-serif', 'Georgia', 'serif'],
+            sans:    ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          letterspacing: {},
+          maxWidth: { 'prose-luxe': '62ch' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root { --ease: cubic-bezier(.22,.61,.36,1); }
+
+    html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body { background:#F6F2EB; }
+    ::selection { background:#EAE1D3; color:#1C1A17; }
+
+    .font-display { font-family:"Cormorant Garamond", serif; }
+
+    /* Eyebrow label */
+    .eyebrow {
+      font-family:Inter, sans-serif; font-weight:500;
+      letter-spacing:.28em; text-transform:uppercase; font-size:.72rem;
+    }
+
+    /* Thin decorative rule */
+    .hairline { height:1px; background:#CDC4B4; }
+
+    /* ---------- Scroll reveal (progressive, JS-gated) ---------- */
+    .js [data-reveal]{ opacity:0; transform:translateY(22px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+    .js [data-reveal].in{ opacity:1; transform:none; }
+    .js [data-reveal][data-delay="1"]{ transition-delay:.08s; }
+    .js [data-reveal][data-delay="2"]{ transition-delay:.16s; }
+    .js [data-reveal][data-delay="3"]{ transition-delay:.24s; }
+
+    /* ---------- Header transition over hero ---------- */
+    #siteHeader{ transition: background-color .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease); }
+    #siteHeader .nav-link, #siteHeader .brand{ color:#FCFAF5; transition:color .4s var(--ease); }
+    #siteHeader.nav-solid{ background:rgba(252,250,245,.86); backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid #E4DCCD; }
+    #siteHeader.nav-solid .nav-link, #siteHeader.nav-solid .brand{ color:#1C1A17; }
+    .nav-link{ position:relative; }
+    .nav-link::after{ content:""; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:currentColor; transition:width .35s var(--ease); }
+    .nav-link:hover::after, .nav-link:focus-visible::after{ width:100%; }
+    /* CTA + burger follow the same light→dark toggle as the links */
+    #siteHeader .nav-cta{ color:#FCFAF5; border-color:rgba(252,250,245,.55); transition:color .4s var(--ease), border-color .4s var(--ease), background-color .4s var(--ease); }
+    #siteHeader.nav-solid .nav-cta{ color:#1C1A17; border-color:rgba(28,26,23,.35); }
+    #siteHeader .nav-cta:hover{ background:#1C1A17; color:#FCFAF5; border-color:#1C1A17; }
+    #siteHeader .nav-burger{ color:#FCFAF5; transition:color .4s var(--ease); }
+    #siteHeader.nav-solid .nav-burger{ color:#1C1A17; }
+
+    /* Focus ring — accessible & on-brand */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+      outline:2px solid #B5965F; outline-offset:3px; border-radius:2px;
+    }
+
+    /* Image hover for gallery / cards */
+    .zoom img{ transition:transform 1.1s var(--ease); }
+    .zoom:hover img{ transform:scale(1.05); }
+
+    /* ---------- Lightbox ---------- */
+    #lightbox{ opacity:0; visibility:hidden; transition:opacity .35s var(--ease), visibility .35s; }
+    #lightbox.open{ opacity:1; visibility:visible; }
+    #lightbox img{ transition:transform .35s var(--ease), opacity .35s var(--ease); }
+
+    /* Floating labels for the form */
+    .field{ position:relative; }
+    .field input, .field textarea{ transition:border-color .3s var(--ease), background-color .3s var(--ease); }
+    .field input::placeholder, .field textarea::placeholder{ color:transparent; }
+    .field label{
+      position:absolute; left:0; top:.85rem; color:#6F675C; font-size:1rem;
+      pointer-events:none; transition:all .22s var(--ease);
+    }
+    .field input:focus + label,
+    .field input:not(:placeholder-shown) + label,
+    .field textarea:focus + label,
+    .field textarea:not(:placeholder-shown) + label,
+    .field.has-value label{
+      top:-.65rem; font-size:.72rem; letter-spacing:.04em; color:#8A6B3D; font-weight:500;
+    }
+    /* date inputs always show their label up (no placeholder semantics) */
+    .field--static label{ top:-.65rem; font-size:.72rem; letter-spacing:.04em; color:#8A6B3D; font-weight:500; }
+
+    /* Reduced motion: disable all transitions / reveals */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .js [data-reveal]{ opacity:1 !important; transform:none !important; transition:none !important; }
+      *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+
+    /* Subtle floating scroll cue */
+    @keyframes cue { 0%,100%{ transform:translateY(0); opacity:.7 } 50%{ transform:translateY(7px); opacity:1 } }
+    .scroll-cue{ animation:cue 2.4s var(--ease) infinite; }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body class="bg-ivory text-graphite font-sans antialiased">
+
+  <!-- Skip link -->
+  <a href="#hauptinhalt" class="sr-only focus:not-sr-only focus:fixed focus:z-[200] focus:top-4 focus:left-4 focus:bg-cream focus:text-ink focus:px-5 focus:py-3 focus:rounded-sm focus:shadow-lg">Zum Inhalt springen</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-[100] border-b border-transparent">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <nav class="flex items-center justify-between h-20" aria-label="Hauptnavigation">
+        <a href="#top" class="brand font-display text-2xl tracking-[.18em] uppercase">Villa Anjos</a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+          <li><a class="nav-link" href="#anwesen">Das Anwesen</a></li>
+          <li><a class="nav-link" href="#galerie">Galerie</a></li>
+          <li><a class="nav-link" href="#lage">Lage</a></li>
+          <li>
+            <a href="#anfrage" class="nav-cta inline-flex items-center gap-2 border px-5 py-2.5 text-xs uppercase tracking-[.2em]">
+              Anfragen
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="nav-burger md:hidden p-2 -mr-2" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobileMenu" class="fixed inset-0 z-[110] bg-cream translate-y-[-100%] transition-transform duration-500 [transition-timing-function:cubic-bezier(.22,.61,.36,1)] md:hidden" aria-hidden="true">
+    <div class="flex items-center justify-between h-20 px-6">
+      <span class="brand font-display text-2xl tracking-[.18em] uppercase text-ink">Villa Anjos</span>
+      <button id="menuClose" class="text-ink p-2 -mr-2" aria-label="Menü schließen">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="px-8 pt-12 flex flex-col gap-8" aria-label="Mobile Navigation">
+      <a href="#anwesen" class="m-link font-display text-4xl text-ink">Das Anwesen</a>
+      <a href="#galerie" class="m-link font-display text-4xl text-ink">Galerie</a>
+      <a href="#lage" class="m-link font-display text-4xl text-ink">Lage</a>
+      <a href="#anfrage" class="m-link font-display text-4xl text-golddark">Anfrage senden</a>
+      <div class="hairline mt-6"></div>
+      <a href="mailto:villa.anjos.gb@gmail.com" class="text-sm tracking-wide text-taupe">villa.anjos.gb@gmail.com</a>
+    </nav>
+  </div>
+
+  <main id="hauptinhalt">
+
+    <!-- ============================ HERO ============================ -->
+    <section id="top" class="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+      <img
+        src="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/131d8a5e-e1ab-4d98-96ac-1fd71733ed1b.jpeg?im_w=1920"
+        alt="Goldene Abendsonne spiegelt sich im privaten Infinity-Pool der Villa Anjos mit Blick über den Atlantik"
+        class="absolute inset-0 h-full w-full object-cover"
+        fetchpriority="high" referrerpolicy="no-referrer" />
+      <!-- Legibility scrim -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/55"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+      <div class="relative h-full mx-auto max-w-7xl px-6 lg:px-10 flex flex-col justify-center">
+        <div class="max-w-3xl">
+          <p class="eyebrow text-gold mb-6" data-reveal>Ponta do Sol · Madeira</p>
+          <h1 class="font-display text-cream leading-[.95] text-6xl sm:text-7xl lg:text-8xl" data-reveal data-delay="1">
+            Villa Anjos
+          </h1>
+          <p class="mt-6 max-w-xl text-cream/85 text-lg sm:text-xl font-light leading-relaxed" data-reveal data-delay="2">
+            Ein privater Rückzugsort über dem Atlantik — wo der Infinity-Pool nahtlos in den Ozean übergeht und die Uhren langsamer ticken.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center gap-5" data-reveal data-delay="3">
+            <a href="#anfrage" class="inline-flex items-center gap-3 bg-cream text-ink px-8 py-4 text-xs uppercase tracking-[.22em] hover:bg-ink hover:text-cream transition-colors duration-500">
+              Aufenthalt anfragen
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#anwesen" class="inline-flex items-center text-cream/90 text-xs uppercase tracking-[.22em] border-b border-cream/40 pb-1 hover:border-cream transition-colors">
+              Das Anwesen entdecken
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <a href="#anwesen" aria-label="Nach unten scrollen" class="scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/80">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ============================ DAS ANWESEN ============================ -->
+    <section id="anwesen" class="py-24 lg:py-36">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <!-- Text -->
+          <div class="lg:col-span-6">
+            <p class="eyebrow text-golddark mb-5" data-reveal>Das Anwesen</p>
+            <h2 class="font-display text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.05]" data-reveal>
+              Eine Oase der Ruhe,<br />über dem Meer geboren.
+            </h2>
+            <div class="mt-8 space-y-6 text-graphite/90 leading-relaxed max-w-prose-luxe" data-reveal data-delay="1">
+              <p>
+                Die Villa Anjos ist ein Ort, an dem der Alltag verfliegt. Dieser moderne Rückzugsort
+                besticht durch ein exklusives Interieur und einen freien Blick auf das Meer, das nahtlos
+                in den privaten Infinity-Pool überzugehen scheint.
+              </p>
+              <p>
+                Bodentiefe Glasfronten verbinden den lichtdurchfluteten Wohnraum mit der weitläufigen
+                Sonnenterrasse. Hier verschmelzen purer Luxus und familiäre Geborgenheit — jedes Detail,
+                von der Premium-Bettwäsche bis zu den drei Master-Suiten, ist auf eine unvergessliche Zeit
+                ausgelegt.
+              </p>
+            </div>
+            <a href="#galerie" class="mt-9 inline-flex items-center gap-3 text-sm uppercase tracking-[.18em] text-ink border-b border-stone pb-1 hover:border-ink transition-colors" data-reveal data-delay="2">
+              Galerie ansehen
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div class="lg:col-span-6" data-reveal data-delay="1">
+            <figure class="zoom overflow-hidden">
+              <img
+                src="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/34fff8b3-aa28-4b8c-8bfa-d5194a21eadd.jpeg?im_w=960"
+                alt="Sonnenterrasse mit Blick auf den Atlantik"
+                loading="lazy" referrerpolicy="no-referrer"
+                class="w-full aspect-[4/5] object-cover" />
+            </figure>
+          </div>
+        </div>
+
+        <!-- Key facts -->
+        <div class="mt-20 lg:mt-28">
+          <div class="hairline mb-12" data-reveal></div>
+          <ul class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+            <!-- Each fact -->
+            <li class="flex flex-col items-center text-center" data-reveal>
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">5</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">Gäste</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="1">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M2 18h20"/><path d="M12 4v6"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">3</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">Master-Suiten</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="2">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.7 3 4 3.7 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="7" y1="19" x2="7" y2="21"/><line x1="17" y1="19" x2="17" y2="21"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">4</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">Badezimmer</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="3">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">Infinity</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">Salzwasser-Pool</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal>
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">Meerblick</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">Ozean &amp; Berge</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="1">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 20 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">WLAN</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">im ganzen Haus</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="2">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">Garage</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">für 4 Fahrzeuge</span>
+            </li>
+            <li class="flex flex-col items-center text-center" data-reveal data-delay="3">
+              <span class="text-golddark" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12a10.06 10.06 0 0 0-20 0Z"/><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg>
+              </span>
+              <span class="mt-4 font-display text-2xl text-ink">250 m</span>
+              <span class="mt-1 text-xs uppercase tracking-[.16em] text-taupe">zum Strand</span>
+            </li>
+          </ul>
+          <div class="hairline mt-12" data-reveal></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ AUSSTATTUNG ============================ -->
+    <section class="pb-24 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="bg-cream border border-stone/60 px-7 py-12 sm:px-14 sm:py-16">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <div class="lg:col-span-4">
+              <p class="eyebrow text-golddark mb-5" data-reveal>Ausstattung</p>
+              <h2 class="font-display text-ink text-3xl sm:text-4xl leading-tight" data-reveal>
+                Zeitgenössische Raffinesse, durchdacht bis ins Detail.
+              </h2>
+              <p class="mt-5 text-graphite/80 leading-relaxed" data-reveal data-delay="1">
+                Premium-Materialien, großzügige Räume und ein Außenbereich, der für anspruchsvolle
+                Reisende geschaffen wurde.
+              </p>
+            </div>
+            <div class="lg:col-span-8">
+              <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-1">
+                <!-- amenity item template repeated -->
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Privater Salzwasser-Infinity-Pool mit Nachtbeleuchtung</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Unverbauter Blick auf Ozean &amp; Berge</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>3 Master-Suiten mit direktem Terrassenzugang</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Walk-in-Closets &amp; maßgefertigte Einbauschränke</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Open-Concept-Wohnbereich mit raumhohen Glasfronten</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Voll ausgestattete High-End-Designküche</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Klimaanlage, raumweise regelbar</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Aufzug über alle Ebenen</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50 sm:border-b-0" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Private Garage für bis zu 4 Fahrzeuge</span>
+                </li>
+                <li class="flex items-start gap-3 py-3 border-b border-stone/50 sm:border-b-0" data-reveal>
+                  <svg class="mt-0.5 shrink-0 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Großformatige Feinsteinzeug-Böden &amp; Smart-TV</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ GALERIE ============================ -->
+    <section id="galerie" class="pb-24 lg:pb-36">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="flex items-end justify-between gap-6 mb-12">
+          <div>
+            <p class="eyebrow text-golddark mb-4" data-reveal>Galerie</p>
+            <h2 class="font-display text-ink text-4xl sm:text-5xl lg:text-6xl leading-none" data-reveal>Eindrücke</h2>
+          </div>
+          <p class="hidden sm:block text-sm text-taupe max-w-xs text-right" data-reveal>
+            Vom Sonnenaufgang über den Bergen bis zur goldenen Stunde am Pool.
+          </p>
+        </div>
+
+        <!-- Asymmetric mosaic — rendered from the Booking.com photo set (see PHOTOS in script). Click → lightbox. -->
+        <div id="galleryGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[42vw] sm:auto-rows-[230px] lg:auto-rows-[250px] [grid-auto-flow:dense]"></div>
+        <noscript><p class="mt-6 text-sm text-taupe">Bitte aktivieren Sie JavaScript, um die vollständige Galerie zu sehen.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============================ LAGE ============================ -->
+    <section id="lage" class="py-24 lg:py-32 bg-sand/40 border-y border-stone/40">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div class="lg:col-span-5">
+            <p class="eyebrow text-golddark mb-5" data-reveal>Lage &amp; Umgebung</p>
+            <h2 class="font-display text-ink text-4xl sm:text-5xl leading-[1.05]" data-reveal>
+              Sítio dos Anjos —<br />ein Highlight Madeiras.
+            </h2>
+            <p class="mt-7 text-graphite/90 leading-relaxed max-w-prose-luxe" data-reveal data-delay="1">
+              Die Villa liegt in einer ruhigen, exklusiven Wohngegend oberhalb von Ponta do Sol. Die
+              Zufahrt führt über die legendäre Küstenstraße ER 101 — direkt vorbei an der berühmten
+              <em>Cascata dos Anjos</em>, dem Wasserfall, der auf die Straße stürzt. Restaurants, Einkauf
+              und die Strände sind in wenigen Minuten erreichbar.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="grid sm:grid-cols-2 gap-4" data-reveal data-delay="1">
+              <div class="bg-cream border border-stone/60 p-7">
+                <p class="font-display text-3xl text-ink">250 m</p>
+                <p class="mt-2 text-sm text-taupe leading-relaxed">Zur Praia dos Anjos — der ruhige Strandabschnitt ist bequem zu Fuß erreichbar.</p>
+              </div>
+              <div class="bg-cream border border-stone/60 p-7">
+                <p class="font-display text-3xl text-ink">25–30 Min</p>
+                <p class="mt-2 text-sm text-taupe leading-relaxed">Über die Schnellstraße in die Inselhauptstadt Funchal.</p>
+              </div>
+              <div class="bg-cream border border-stone/60 p-7">
+                <p class="font-display text-3xl text-ink">43 km</p>
+                <p class="mt-2 text-sm text-taupe leading-relaxed">Bis zum internationalen Flughafen Madeira (Cristiano Ronaldo).</p>
+              </div>
+              <div class="bg-cream border border-stone/60 p-7">
+                <p class="font-display text-3xl text-ink">ER 101</p>
+                <p class="mt-2 text-sm text-taupe leading-relaxed">Panorama-Küstenstraße vorbei an der Cascata dos Anjos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ANFRAGE ============================ -->
+    <section id="anfrage" class="py-24 lg:py-36">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+          <!-- Intro + contact card -->
+          <div class="lg:col-span-5">
+            <p class="eyebrow text-golddark mb-5" data-reveal>Buchungsanfrage</p>
+            <h2 class="font-display text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.03]" data-reveal>
+              Ihr Aufenthalt in der Villa Anjos
+            </h2>
+            <p class="mt-6 text-graphite/90 leading-relaxed max-w-prose-luxe" data-reveal data-delay="1">
+              Senden Sie uns Ihren Wunschzeitraum — wir melden uns persönlich mit Verfügbarkeit und einem
+              individuellen Angebot. Für direkte Anfragen erreichen Sie uns jederzeit per E-Mail.
+            </p>
+
+            <div class="mt-10 bg-cream border border-stone/60 p-7" data-reveal data-delay="2">
+              <p class="eyebrow text-taupe mb-4">Direkte Anfrage</p>
+              <a href="mailto:villa.anjos.gb@gmail.com?subject=Buchungsanfrage%20Villa%20Anjos" class="group flex items-center gap-4">
+                <span class="grid place-items-center w-12 h-12 rounded-full bg-ivory border border-stone text-golddark shrink-0">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                </span>
+                <span>
+                  <span class="block text-xs uppercase tracking-[.18em] text-taupe">E-Mail</span>
+                  <span class="block text-lg text-ink group-hover:text-golddark transition-colors break-all">villa.anjos.gb@gmail.com</span>
+                </span>
+              </a>
+              <div class="hairline my-6"></div>
+              <div class="flex items-start gap-4">
+                <span class="grid place-items-center w-12 h-12 rounded-full bg-ivory border border-stone text-golddark shrink-0">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span>
+                  <span class="block text-xs uppercase tracking-[.18em] text-taupe">Standort</span>
+                  <span class="block text-lg text-ink">Sítio dos Anjos · Ponta do Sol, Madeira</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="lg:col-span-7">
+            <form id="bookingForm" novalidate class="bg-cream border border-stone/60 p-7 sm:p-10" data-reveal data-delay="1">
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7">
+
+                <div class="field sm:col-span-2">
+                  <input id="name" name="name" type="text" required autocomplete="name" placeholder="Name"
+                         class="peer w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none" />
+                  <label for="name">Name <span class="text-golddark">*</span></label>
+                  <p class="err hidden mt-1.5 text-xs text-red-700"></p>
+                </div>
+
+                <div class="field sm:col-span-2">
+                  <input id="email" name="email" type="email" required autocomplete="email" placeholder="E-Mail"
+                         class="peer w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none" />
+                  <label for="email">E-Mail <span class="text-golddark">*</span></label>
+                  <p class="err hidden mt-1.5 text-xs text-red-700"></p>
+                </div>
+
+                <div class="field field--static">
+                  <input id="from" name="from" type="date" required
+                         class="w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none" />
+                  <label for="from">Anreise <span class="text-golddark">*</span></label>
+                  <p class="err hidden mt-1.5 text-xs text-red-700"></p>
+                </div>
+
+                <div class="field field--static">
+                  <input id="to" name="to" type="date" required
+                         class="w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none" />
+                  <label for="to">Abreise <span class="text-golddark">*</span></label>
+                  <p class="err hidden mt-1.5 text-xs text-red-700"></p>
+                </div>
+
+                <div class="field field--static sm:col-span-2">
+                  <input id="guests" name="guests" type="number" min="1" max="5" value="2" inputmode="numeric"
+                         class="w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none" />
+                  <label for="guests">Personen (max. 5)</label>
+                  <p class="err hidden mt-1.5 text-xs text-red-700"></p>
+                </div>
+
+                <div class="field sm:col-span-2">
+                  <textarea id="message" name="message" rows="4" placeholder="Nachricht"
+                            class="peer w-full bg-transparent border-0 border-b border-stone py-3 text-ink focus:border-golddark outline-none resize-none"></textarea>
+                  <label for="message">Ihre Nachricht</label>
+                </div>
+              </div>
+
+              <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-5">
+                <button type="submit"
+                        class="inline-flex items-center justify-center gap-3 bg-ink text-cream px-8 py-4 text-xs uppercase tracking-[.22em] hover:bg-golddark transition-colors duration-500">
+                  Anfrage senden
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+                <p class="text-xs text-taupe leading-relaxed max-w-sm">
+                  Mit dem Absenden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Anfrage. Es werden
+                  keine Daten gespeichert.
+                </p>
+              </div>
+
+              <!-- Success message (aria-live, does not steal focus visually) -->
+              <div id="formSuccess" role="status" aria-live="polite" class="hidden mt-6 flex items-start gap-3 bg-ivory border border-gold/50 px-5 py-4">
+                <svg class="mt-0.5 shrink-0 text-golddark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+                <p class="text-sm text-graphite">Vielen Dank! Ihre Anfrage wurde vorbereitet — bitte senden Sie die geöffnete E-Mail ab. Wir melden uns zeitnah persönlich bei Ihnen.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-ink text-cream/80">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <p class="font-display text-2xl tracking-[.18em] uppercase text-cream">Villa Anjos</p>
+          <p class="mt-4 text-sm leading-relaxed max-w-xs text-cream/60">
+            Privater Luxus-Rückzugsort mit Infinity-Pool und Meerblick in Ponta do Sol, Madeira.
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow text-gold mb-4">Navigation</p>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#anwesen" class="hover:text-cream transition-colors">Das Anwesen</a></li>
+            <li><a href="#galerie" class="hover:text-cream transition-colors">Galerie</a></li>
+            <li><a href="#lage" class="hover:text-cream transition-colors">Lage</a></li>
+            <li><a href="#anfrage" class="hover:text-cream transition-colors">Anfrage</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow text-gold mb-4">Kontakt</p>
+          <a href="mailto:villa.anjos.gb@gmail.com" class="text-sm hover:text-cream transition-colors break-all">villa.anjos.gb@gmail.com</a>
+          <p class="mt-4 text-xs text-cream/50">AL-Registrierung: 154345/AL</p>
+        </div>
+      </div>
+
+      <div class="mt-14 pt-6 border-t border-cream/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/50">
+        <p>© <span id="year">2026</span> Villa Anjos · Madeira</p>
+        <nav class="flex items-center gap-6" aria-label="Rechtliches">
+          <a href="#" class="hover:text-cream transition-colors">Impressum</a>
+          <a href="#" class="hover:text-cream transition-colors">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ LIGHTBOX ============================ -->
+  <div id="lightbox" class="fixed inset-0 z-[150] bg-ink/95 flex items-center justify-center p-4 sm:p-10" role="dialog" aria-modal="true" aria-label="Bildergalerie">
+    <button id="lbClose" class="absolute top-5 right-5 text-cream/80 hover:text-cream p-2" aria-label="Schließen">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+    <button id="lbPrev" class="absolute left-3 sm:left-6 text-cream/80 hover:text-cream p-2" aria-label="Vorheriges Bild">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button id="lbNext" class="absolute right-3 sm:right-6 text-cream/80 hover:text-cream p-2" aria-label="Nächstes Bild">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <figure class="max-w-6xl w-full text-center">
+      <img id="lbImg" src="" alt="" referrerpolicy="no-referrer" class="mx-auto max-h-[78vh] w-auto object-contain" />
+      <figcaption id="lbCap" class="mt-5 text-cream/70 text-sm tracking-wide"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Gallery tile hover affordance -->
+  <style>
+    .g-item{ cursor:pointer; }
+    .g-item::after{ content:""; position:absolute; inset:0; z-index:1; background:rgba(20,18,15,0); transition:background .45s var(--ease); pointer-events:none; }
+    .g-item:hover::after, .g-item:focus-visible::after{ background:rgba(20,18,15,.22); }
+    .g-plus{
+      position:absolute; z-index:2; top:50%; left:50%;
+      transform:translate(-50%,-50%) scale(.78);
+      width:48px; height:48px; display:grid; place-items:center;
+      border:1px solid rgba(252,250,245,.7); border-radius:9999px;
+      color:#FCFAF5; background:rgba(20,18,15,.18);
+      opacity:0; transition:opacity .45s var(--ease), transform .45s var(--ease); pointer-events:none;
+    }
+    .g-item:hover .g-plus, .g-item:focus-visible .g-plus{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  </style>
+
+  <!-- ============================ SCRIPTS ============================ -->
+  <script>
+  (function () {
+    'use strict';
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Year ---------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---------- Gallery: render all Booking.com photos (id:hash) ---------- */
+    var PHOTOS = [
+      '833749093:3e3c577595dc304cd3c69c10d577a0780ba206ac3fbf3ecfe253413e1972a74b',
+      '833749192:a7c572e94117c229f9221dfc54b0e643a86b32cb7c50293862b1f687463a7c16',
+      '833749023:013cb2b8bca7d76cb70dfdd14709cd4ba483fb4fac4f946dd402b77aba3e21ea',
+      '833748999:b687adc8542ce7a5f71b2ceb546e42b1050a4702032125d9fb32ba7e4a0c480f',
+      '833749247:7c03f265f6be969059d5ee5bb6b431edca225da24f107289ab5d16f01dd7d640',
+      '834365571:d480e473f01adcbaae16dc87975f245649648a3432b747504334bfca77af8ed4',
+      '833749029:63ab26bf3fe185a5bf4e940b3772220ba0cdadb683a085f93ded1970de044840',
+      '833749251:8b793f282bb5aae380b4b12663ae11931e365a405e81a7c4d995471ebe917c1e',
+      '833749065:c67aad4872e59212454521c415c20270bb18418725f7aec40a3d2d4e7170576e',
+      '833748992:a96665769ceec7e8d1ca04d5d2ff178aadc62ae18ea1c2ade7877e87b278bf68',
+      '856941030:333ea3e28b70ef566ccdb795b3b5c54e8f91b3cd494bf5e30226ff7e17edf7fd',
+      '856941029:89e565b1e92b5489b1ba04d9e4e49be8ec55418954cf76d76c65b5641ef2f5a3',
+      '856941026:86273fae115e50e4df6b621627815e00b8ecdc895759f6965ada9ac2664fa3db',
+      '833749011:1b3502f8606ec75a73cd82460f1b10d346c78a6907b68be9bce86f75c63583f2',
+      '834362533:bb0445b13773d4cfe5c8516041f4306c3bde0ca3e6304aeba6aad92e4020c31b',
+      '856941025:132c97431187992adcf805977abf5ad3f099cf2c850d8c10e544b4aec7ee88d6',
+      '834364034:e43320679fe6db59aa1eb8d5b268eb695cbf91ec256ae497694b5d8531932781',
+      '834362490:fd3cec8cace37835134388d8d0ca8385c1179f9d28e914fb547a8e728e28baf9',
+      '856941020:25b83ffad0a31dcd420cdda90ddffe314dedc95b9d77cba5aab44961ee938612',
+      '856941016:aa10c85bfe8837c3cffb9acd9c5ef015a1f91140dc7c16ac5df4496fe42537b7',
+      '856941019:31f2123ff303fa90820ddd0d481d32a4f71c2b247a376618fd27c727b8599a53',
+      '833748875:3ef51fd38d7f152a93f69e9f87d2d1923968065393bd6e2982009dcb17e33d26',
+      '856941018:fe4a3bdfa15042280cf52bbad9e4e6fb714f23b301db81e5e9e54edba0e74ec7',
+      '833749229:7c8dc74037b40af31dc37dda9d0ed7c291733bf345864e4c7766bfa8191df81f',
+      '856941028:dd7c5147e7d7d9397cbe97fb703a41ba281c9e4eb086bfb033b6fac7dc9b316d',
+      '834363869:7db1c306ca003c6d32cf2dc32afd380db8cd37b1b5f98d71f4b2484754454cf7',
+      '834365714:c345e58c2873099aa7f7f6fc9a4360dddfa4df178d330217040678e887cdbcf4',
+      '856941024:8867f7b503dc84b8e94e0ace55d4cd78a423fa90ae85ac397da8f7a5e338dcfd',
+      '834365769:ec1cdcb270476c730b9813b3866b12ff07170d47547c353570ed4c913b07d62e',
+      '834362343:fbb9f0207550f83b433be87d2d297c1777bd488651c7ecdca122953cfe743556',
+      '833749037:7ba37fe90a633bed166c494c46778f89eb9157bd30cb5d505a617bb315fad91a',
+      '833749224:a9c9bcfa51351ef5994a6e0d1a7ce96be7a531fe3648645f4bb1b0629c503dfe',
+      '833749132:79b7308692085d4f6b2909701d1970b8885d317cef138578d22a988b95c0ca41',
+      '856941023:3cf860ad18a60d03b972245a2b28bf407b4f5220220ebd52d557bba26931438f',
+      '856941021:54588e79dc606a9362035c694b3f874e9b3e0dceb2585f790ba9090133213b74',
+      '833748984:99e9d2d8c2f049fc164323b610789808cb5cee2e6dedddf098091fb052756cc4',
+      '833748966:8fdc1a086d0a66767a8cb54c8e27a268d1f5334d2aa753dc60ead1618075aa75',
+      '833749055:811e29803d380b629ccf41e1949b7130cca3fe92bec31aff1e1e7082f8e42e73',
+      '833749071:f727523b36e827f493272a42608c2579aa7971bf2dc115cbb890519ecd157209',
+      '834365371:1f1be12b41fc635299542cc32ad264bf5159261b1460c01599a13ebe364fe8a2',
+      '834364991:14f1f13c8696c8a8527520aa796014f1dc1977d71d3ccb8bd9b61fe0eb4fce53',
+      '833749198:0c912a3e26d94055cc18d4f41a4ff21d40fe18f482d6e545b3f7e595356d72d6',
+      '833749017:695d3933a6285b63b244ab9d27786a7eefa2a6f07f5582faaa07b144613b44b6',
+      '856941022:f1021154478031683b5dc65127da4adb462e0b8b400c77bbf078b1857f357744',
+      '833749218:20b822376ccc15adaba4ab2a53d1cc7b284a81e6ac7ec7200de360f4bfab35d1',
+      '833749152:7c6b47bb192fefa988bf656b3160fdae09725411377b212b53f5ffccb8007bf5',
+      '856941017:12930049d13cfa252a503b74019b396fbf77905e3311dd7aa083afbcb27859cc',
+      '833749206:530d0e4e9358cfed89533a3c65641edb37c761163edf4b7966483f81e2ed5c3f',
+      '833749185:4171f4c19d2ed75789cd171429d5ef488f8a847ea160b54b6950b581311b2cfd',
+      '833749117:9c13a2def9a3f70e5887d421f240b6eb02c7c65e7cfe30d76413ea764e57bc7e',
+      '833748957:20386fa5e42e607605a506be1c9fd939970492fdb7c4a45e55d79658cbd5b6e0',
+      '833749082:0738cd21aec8912bcc4e246aaefccf61b8762f13ff264edcdd703fdc9517499f',
+      '833749106:0a9c5f7c251cce2d215747027111598545c2aa6ebe2be78846bd0027c8dbee57',
+      '833749142:b4c415a5f6b09a301d568ef73c03df5c4f1d4aed896ff4df05572aa083d97b57',
+      '833749260:2535b5af0c9996963bcd788f21c069582b33ba424abc4ff2134c938f13e37ece',
+      '833749234:7c3c231a1f8539acfd4ae3506d7589feb22e94934b565a8771f911c62e773374',
+      '833749168:7e22d21f51d7ceb979365d1d29c8cb6771f0ee2f9992dcc303dbda7e316023a4',
+      '856941027:3efca3e2c6aa8c48b4d6b4d915564296d05232c870d637f3d63aed27817d65da',
+      '887814356:da5509a18ffb8498550dad2cfc0e2130a75ce31d3798d33905da851eba612f12',
+      '887967144:14f69b1fdc90c4e14eaf1dab4f0dbbaf380f215efbbc46c98d05df4ec1f4bf37'
+    ];
+    var bImg = function (p, size) { var a = p.split(':'); return 'https://cf.bstatic.com/xdata/images/hotel/' + size + '/' + a[0] + '.jpg?k=' + a[1] + '&o='; };
+    (function renderGallery(){
+      var grid = document.getElementById('galleryGrid');
+      if (!grid) return;
+      var html = '';
+      PHOTOS.forEach(function (p, i) {
+        var span = 'col-span-1 row-span-1';
+        if (i === 0) span = 'col-span-2 row-span-2';
+        else if (i % 10 === 5) span = 'col-span-2 row-span-1';
+        else if (i % 6 === 2) span = 'col-span-1 row-span-2';
+        html +=
+          '<button class="g-item zoom group relative overflow-hidden ' + span + '" data-reveal' +
+          ' data-full="' + bImg(p, 'max1280x900') + '" aria-label="Foto ' + (i + 1) + ' von ' + PHOTOS.length + ' vergrößern">' +
+          '<img src="' + bImg(p, 'max500') + '" loading="lazy" referrerpolicy="no-referrer"' +
+          ' alt="Villa Anjos – Eindruck ' + (i + 1) + '" class="h-full w-full object-cover" />' +
+          '<span class="g-plus" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>' +
+          '</button>';
+      });
+      grid.innerHTML = html;
+    })();
+
+    /* ---------- Header solid-on-scroll ---------- */
+    var header = document.getElementById('siteHeader');
+    function onScroll(){ header.classList.toggle('nav-solid', window.scrollY > 80); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive:true });
+
+    /* ---------- Mobile menu ---------- */
+    var menu = document.getElementById('mobileMenu');
+    var menuBtn = document.getElementById('menuBtn');
+    function openMenu(){ menu.style.transform='translateY(0)'; menu.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeMenu(){ menu.style.transform=''; menu.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    menuBtn.addEventListener('click', openMenu);
+    document.getElementById('menuClose').addEventListener('click', closeMenu);
+    menu.querySelectorAll('.m-link').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+    /* ---------- Scroll reveal ---------- */
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin:'0px 0px -8% 0px', threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    }
+
+    /* ---------- Floating label fallback (keeps label up when value present) ---------- */
+    document.querySelectorAll('.field input, .field textarea').forEach(function(inp){
+      function sync(){ inp.closest('.field').classList.toggle('has-value', !!inp.value); }
+      inp.addEventListener('input', sync); sync();
+    });
+
+    /* ---------- Lightbox ---------- */
+    var items = Array.prototype.slice.call(document.querySelectorAll('.g-item'));
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var lbCap = document.getElementById('lbCap');
+    var current = 0, lastFocused = null;
+
+    function show(i){
+      current = (i + items.length) % items.length;
+      var el = items[current];
+      lbImg.src = el.getAttribute('data-full');
+      lbImg.alt = el.querySelector('img').alt;
+      lbCap.textContent = 'Villa Anjos · ' + (current + 1) + ' / ' + items.length;
+    }
+    function open(i){
+      lastFocused = document.activeElement;
+      show(i); lb.classList.add('open'); document.body.style.overflow='hidden';
+      document.getElementById('lbClose').focus();
+    }
+    function close(){
+      lb.classList.remove('open'); document.body.style.overflow='';
+      if (lastFocused) lastFocused.focus();
+    }
+    items.forEach(function(el, i){ el.addEventListener('click', function(){ open(i); }); });
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbNext').addEventListener('click', function(){ show(current+1); });
+    document.getElementById('lbPrev').addEventListener('click', function(){ show(current-1); });
+    lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+    document.addEventListener('keydown', function(e){
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') show(current+1);
+      else if (e.key === 'ArrowLeft') show(current-1);
+    });
+
+    /* ---------- Booking form: validate + mailto ---------- */
+    var form = document.getElementById('bookingForm');
+    var success = document.getElementById('formSuccess');
+
+    function setError(id, msg){
+      var field = document.getElementById(id).closest('.field');
+      var err = field.querySelector('.err');
+      var input = document.getElementById(id);
+      if (msg){
+        err.textContent = msg; err.classList.remove('hidden');
+        input.classList.add('border-red-600'); input.setAttribute('aria-invalid','true');
+      } else {
+        err.textContent=''; err.classList.add('hidden');
+        input.classList.remove('border-red-600'); input.removeAttribute('aria-invalid');
+      }
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ok = true, firstInvalid = null;
+      var name = document.getElementById('name');
+      var email = document.getElementById('email');
+      var from = document.getElementById('from');
+      var to = document.getElementById('to');
+      var guests = document.getElementById('guests');
+      var message = document.getElementById('message');
+
+      // Reset
+      ['name','email','from','to','guests'].forEach(function(id){ setError(id, ''); });
+
+      if (!name.value.trim()){ setError('name','Bitte geben Sie Ihren Namen an.'); ok=false; firstInvalid=firstInvalid||name; }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ setError('email','Bitte geben Sie eine gültige E-Mail-Adresse an.'); ok=false; firstInvalid=firstInvalid||email; }
+      if (!from.value){ setError('from','Bitte wählen Sie ein Anreisedatum.'); ok=false; firstInvalid=firstInvalid||from; }
+      if (!to.value){ setError('to','Bitte wählen Sie ein Abreisedatum.'); ok=false; firstInvalid=firstInvalid||to; }
+      if (from.value && to.value && new Date(to.value) <= new Date(from.value)){ setError('to','Die Abreise muss nach der Anreise liegen.'); ok=false; firstInvalid=firstInvalid||to; }
+      if (guests.value && (Number(guests.value) < 1 || Number(guests.value) > 5)){ setError('guests','Die Villa beherbergt bis zu 5 Gäste.'); ok=false; firstInvalid=firstInvalid||guests; }
+
+      if (!ok){ if (firstInvalid) firstInvalid.focus(); return; }
+
+      // Build mailto
+      var subject = 'Buchungsanfrage Villa Anjos';
+      var body =
+        'Name: ' + name.value + '\n' +
+        'E-Mail: ' + email.value + '\n' +
+        'Anreise: ' + from.value + '\n' +
+        'Abreise: ' + to.value + '\n' +
+        'Personen: ' + (guests.value || '–') + '\n\n' +
+        'Nachricht:\n' + (message.value || '–') + '\n';
+      var href = 'mailto:villa.anjos.gb@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      window.location.href = href;
+      success.classList.remove('hidden');
+      success.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'center' });
+    });
+  })();
+  </script>
+</body>
+</html>
