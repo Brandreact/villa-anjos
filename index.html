@@ -11,12 +11,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Villa Anjos — Privater Luxus über dem Atlantik" />
   <meta property="og:description" content="Exklusive Villa mit Infinity-Pool und Meerblick in Ponta do Sol, Madeira." />
-  <meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/131d8a5e-e1ab-4d98-96ac-1fd71733ed1b.jpeg?im_w=1200" />
+  <meta property="og:image" content="assets/images/hero.jpg" />
 
-  <!-- Perf: connect early to font + image CDNs -->
+  <!-- Perf: connect early to the Google Fonts CDN (images are now self-hosted) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://a0.muscache.com" crossorigin />
 
   <!-- Typography: Cormorant Garamond (display) + Inter (body) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -189,7 +188,7 @@
     <!-- ============================ HERO ============================ -->
     <section id="top" class="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <img
-        src="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/131d8a5e-e1ab-4d98-96ac-1fd71733ed1b.jpeg?im_w=1920"
+        src="assets/images/hero.jpg"
         alt="Goldene Abendsonne spiegelt sich im privaten Infinity-Pool der Villa Anjos mit Blick über den Atlantik"
         class="absolute inset-0 h-full w-full object-cover"
         fetchpriority="high" referrerpolicy="no-referrer" />
@@ -258,7 +257,7 @@
           <div class="lg:col-span-6" data-reveal data-delay="1">
             <figure class="zoom overflow-hidden">
               <img
-                src="https://a0.muscache.com/im/pictures/hosting/Hosting-1612274254501500843/original/34fff8b3-aa28-4b8c-8bfa-d5194a21eadd.jpeg?im_w=960"
+                src="assets/images/property.jpg"
                 alt="Sonnenterrasse mit Blick auf den Atlantik"
                 loading="lazy" referrerpolicy="no-referrer"
                 class="w-full aspect-[4/5] object-cover" />
@@ -647,87 +646,27 @@
     /* ---------- Year ---------- */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* ---------- Gallery: render all Booking.com photos (id:hash) ---------- */
-    var PHOTOS = [
-      '833749093:3e3c577595dc304cd3c69c10d577a0780ba206ac3fbf3ecfe253413e1972a74b',
-      '833749192:a7c572e94117c229f9221dfc54b0e643a86b32cb7c50293862b1f687463a7c16',
-      '833749023:013cb2b8bca7d76cb70dfdd14709cd4ba483fb4fac4f946dd402b77aba3e21ea',
-      '833748999:b687adc8542ce7a5f71b2ceb546e42b1050a4702032125d9fb32ba7e4a0c480f',
-      '833749247:7c03f265f6be969059d5ee5bb6b431edca225da24f107289ab5d16f01dd7d640',
-      '834365571:d480e473f01adcbaae16dc87975f245649648a3432b747504334bfca77af8ed4',
-      '833749029:63ab26bf3fe185a5bf4e940b3772220ba0cdadb683a085f93ded1970de044840',
-      '833749251:8b793f282bb5aae380b4b12663ae11931e365a405e81a7c4d995471ebe917c1e',
-      '833749065:c67aad4872e59212454521c415c20270bb18418725f7aec40a3d2d4e7170576e',
-      '833748992:a96665769ceec7e8d1ca04d5d2ff178aadc62ae18ea1c2ade7877e87b278bf68',
-      '856941030:333ea3e28b70ef566ccdb795b3b5c54e8f91b3cd494bf5e30226ff7e17edf7fd',
-      '856941029:89e565b1e92b5489b1ba04d9e4e49be8ec55418954cf76d76c65b5641ef2f5a3',
-      '856941026:86273fae115e50e4df6b621627815e00b8ecdc895759f6965ada9ac2664fa3db',
-      '833749011:1b3502f8606ec75a73cd82460f1b10d346c78a6907b68be9bce86f75c63583f2',
-      '834362533:bb0445b13773d4cfe5c8516041f4306c3bde0ca3e6304aeba6aad92e4020c31b',
-      '856941025:132c97431187992adcf805977abf5ad3f099cf2c850d8c10e544b4aec7ee88d6',
-      '834364034:e43320679fe6db59aa1eb8d5b268eb695cbf91ec256ae497694b5d8531932781',
-      '834362490:fd3cec8cace37835134388d8d0ca8385c1179f9d28e914fb547a8e728e28baf9',
-      '856941020:25b83ffad0a31dcd420cdda90ddffe314dedc95b9d77cba5aab44961ee938612',
-      '856941016:aa10c85bfe8837c3cffb9acd9c5ef015a1f91140dc7c16ac5df4496fe42537b7',
-      '856941019:31f2123ff303fa90820ddd0d481d32a4f71c2b247a376618fd27c727b8599a53',
-      '833748875:3ef51fd38d7f152a93f69e9f87d2d1923968065393bd6e2982009dcb17e33d26',
-      '856941018:fe4a3bdfa15042280cf52bbad9e4e6fb714f23b301db81e5e9e54edba0e74ec7',
-      '833749229:7c8dc74037b40af31dc37dda9d0ed7c291733bf345864e4c7766bfa8191df81f',
-      '856941028:dd7c5147e7d7d9397cbe97fb703a41ba281c9e4eb086bfb033b6fac7dc9b316d',
-      '834363869:7db1c306ca003c6d32cf2dc32afd380db8cd37b1b5f98d71f4b2484754454cf7',
-      '834365714:c345e58c2873099aa7f7f6fc9a4360dddfa4df178d330217040678e887cdbcf4',
-      '856941024:8867f7b503dc84b8e94e0ace55d4cd78a423fa90ae85ac397da8f7a5e338dcfd',
-      '834365769:ec1cdcb270476c730b9813b3866b12ff07170d47547c353570ed4c913b07d62e',
-      '834362343:fbb9f0207550f83b433be87d2d297c1777bd488651c7ecdca122953cfe743556',
-      '833749037:7ba37fe90a633bed166c494c46778f89eb9157bd30cb5d505a617bb315fad91a',
-      '833749224:a9c9bcfa51351ef5994a6e0d1a7ce96be7a531fe3648645f4bb1b0629c503dfe',
-      '833749132:79b7308692085d4f6b2909701d1970b8885d317cef138578d22a988b95c0ca41',
-      '856941023:3cf860ad18a60d03b972245a2b28bf407b4f5220220ebd52d557bba26931438f',
-      '856941021:54588e79dc606a9362035c694b3f874e9b3e0dceb2585f790ba9090133213b74',
-      '833748984:99e9d2d8c2f049fc164323b610789808cb5cee2e6dedddf098091fb052756cc4',
-      '833748966:8fdc1a086d0a66767a8cb54c8e27a268d1f5334d2aa753dc60ead1618075aa75',
-      '833749055:811e29803d380b629ccf41e1949b7130cca3fe92bec31aff1e1e7082f8e42e73',
-      '833749071:f727523b36e827f493272a42608c2579aa7971bf2dc115cbb890519ecd157209',
-      '834365371:1f1be12b41fc635299542cc32ad264bf5159261b1460c01599a13ebe364fe8a2',
-      '834364991:14f1f13c8696c8a8527520aa796014f1dc1977d71d3ccb8bd9b61fe0eb4fce53',
-      '833749198:0c912a3e26d94055cc18d4f41a4ff21d40fe18f482d6e545b3f7e595356d72d6',
-      '833749017:695d3933a6285b63b244ab9d27786a7eefa2a6f07f5582faaa07b144613b44b6',
-      '856941022:f1021154478031683b5dc65127da4adb462e0b8b400c77bbf078b1857f357744',
-      '833749218:20b822376ccc15adaba4ab2a53d1cc7b284a81e6ac7ec7200de360f4bfab35d1',
-      '833749152:7c6b47bb192fefa988bf656b3160fdae09725411377b212b53f5ffccb8007bf5',
-      '856941017:12930049d13cfa252a503b74019b396fbf77905e3311dd7aa083afbcb27859cc',
-      '833749206:530d0e4e9358cfed89533a3c65641edb37c761163edf4b7966483f81e2ed5c3f',
-      '833749185:4171f4c19d2ed75789cd171429d5ef488f8a847ea160b54b6950b581311b2cfd',
-      '833749117:9c13a2def9a3f70e5887d421f240b6eb02c7c65e7cfe30d76413ea764e57bc7e',
-      '833748957:20386fa5e42e607605a506be1c9fd939970492fdb7c4a45e55d79658cbd5b6e0',
-      '833749082:0738cd21aec8912bcc4e246aaefccf61b8762f13ff264edcdd703fdc9517499f',
-      '833749106:0a9c5f7c251cce2d215747027111598545c2aa6ebe2be78846bd0027c8dbee57',
-      '833749142:b4c415a5f6b09a301d568ef73c03df5c4f1d4aed896ff4df05572aa083d97b57',
-      '833749260:2535b5af0c9996963bcd788f21c069582b33ba424abc4ff2134c938f13e37ece',
-      '833749234:7c3c231a1f8539acfd4ae3506d7589feb22e94934b565a8771f911c62e773374',
-      '833749168:7e22d21f51d7ceb979365d1d29c8cb6771f0ee2f9992dcc303dbda7e316023a4',
-      '856941027:3efca3e2c6aa8c48b4d6b4d915564296d05232c870d637f3d63aed27817d65da',
-      '887814356:da5509a18ffb8498550dad2cfc0e2130a75ce31d3798d33905da851eba612f12',
-      '887967144:14f69b1fdc90c4e14eaf1dab4f0dbbaf380f215efbbc46c98d05df4ec1f4bf37'
-    ];
-    var bImg = function (p, size) { var a = p.split(':'); return 'https://cf.bstatic.com/xdata/images/hotel/' + size + '/' + a[0] + '.jpg?k=' + a[1] + '&o='; };
+    /* ---------- Gallery: render the 60 self-hosted photos ---------- */
+    var PHOTO_COUNT = 60;
+    var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
     (function renderGallery(){
       var grid = document.getElementById('galleryGrid');
       if (!grid) return;
       var html = '';
-      PHOTOS.forEach(function (p, i) {
+      for (var i = 0; i < PHOTO_COUNT; i++) {
         var span = 'col-span-1 row-span-1';
         if (i === 0) span = 'col-span-2 row-span-2';
         else if (i % 10 === 5) span = 'col-span-2 row-span-1';
         else if (i % 6 === 2) span = 'col-span-1 row-span-2';
+        var nn = pad(i + 1);
         html +=
           '<button class="g-item zoom group relative overflow-hidden ' + span + '" data-reveal' +
-          ' data-full="' + bImg(p, 'max1280x900') + '" aria-label="Foto ' + (i + 1) + ' von ' + PHOTOS.length + ' vergrößern">' +
-          '<img src="' + bImg(p, 'max500') + '" loading="lazy" referrerpolicy="no-referrer"' +
-          ' alt="Villa Anjos – Eindruck ' + (i + 1) + '" class="h-full w-full object-cover" />' +
+          ' data-full="assets/images/gallery/full/' + nn + '.jpg" aria-label="Foto ' + (i + 1) + ' von ' + PHOTO_COUNT + ' vergroessern">' +
+          '<img src="assets/images/gallery/thumb/' + nn + '.jpg" loading="lazy"' +
+          ' alt="Villa Anjos - Eindruck ' + (i + 1) + '" class="h-full w-full object-cover" />' +
           '<span class="g-plus" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>' +
           '</button>';
-      });
+      }
       grid.innerHTML = html;
     })();
 
